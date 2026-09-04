@@ -225,20 +225,35 @@
       animation: fadeUp 1.2s ease forwards;
     }
 
-    .profile-card {
-      width: min(360px, 90vw);
-      padding: 15px;
-      border-radius: 30px;
-      background: linear-gradient(
-        145deg,
-        rgba(255,255,255,.12),
-        rgba(255,255,255,.025)
-      );
-      border: 1px solid rgba(255,255,255,.1);
-      box-shadow: 0 30px 80px rgba(0,0,0,.45);
-      transform: rotate(3deg);
-      transition: .5s;
-    }
+ .profile-card {
+  width: min(480px, 95vw); /* Diubah dari 360px ke 480px */
+  padding: 18px;
+  border-radius: 30px;
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,.12),
+    rgba(255,255,255,.025)
+  );
+  border: 1px solid rgba(255,255,255,.1);
+  box-shadow: 0 30px 80px rgba(0,0,0,.45);
+  transform: rotate(2deg); /* Kemiringan dikurangi sedikit agar gambar lebih fokus */
+  transition: .5s;
+}
+
+.profile-image {
+  height: 540px; /* Diubah dari 430px ke 540px */
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(135deg, rgba(139,92,246,.3), rgba(236,72,153,.2)),
+    #15161e;
+  overflow: hidden;
+  position: relative;
+};
+  position: relative;
+}
 
     .profile-card:hover {
       transform: rotate(0deg) translateY(-10px);
