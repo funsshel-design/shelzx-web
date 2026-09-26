@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="id">
 
@@ -40,7 +39,7 @@
 
   <meta
     name="theme-color"
-    content="#08090d"
+    content="#0a0f1a"
   >
 
 
@@ -63,7 +62,7 @@
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"
     rel="stylesheet"
   >
 
@@ -86,29 +85,29 @@
 
     :root {
 
-      --bg: #08090d;
+      --bg: #0a0f1a;
 
-      --bg-secondary: #0d0f16;
+      --bg-secondary: #0d1424;
 
-      --bg-card: rgba(255, 255, 255, 0.055);
+      --bg-card: rgba(255, 255, 255, 0.05);
 
-      --bg-card-hover: rgba(255, 255, 255, 0.08);
+      --bg-card-hover: rgba(255, 255, 255, 0.078);
 
       --border: rgba(255, 255, 255, 0.10);
 
-      --border-hover: rgba(139, 92, 246, 0.50);
+      --border-hover: rgba(255, 177, 0, 0.50);
 
-      --text: #f5f5f7;
+      --text: #f2f4f9;
 
-      --muted: #9b9da8;
+      --muted: #94a0b7;
 
-      --accent: #8b5cf6;
+      --accent: #ffb100;
 
-      --accent-light: #a78bfa;
+      --accent-light: #ffd166;
 
-      --accent2: #ec4899;
+      --accent2: #ff6a3d;
 
-      --cyan: #22d3ee;
+      --cyan: #2dd4c7;
 
       --green: #34d399;
 
@@ -153,12 +152,12 @@
       background:
         radial-gradient(
           circle at 15% 15%,
-          rgba(139, 92, 246, 0.15),
+          rgba(255, 177, 0, 0.15),
           transparent 25%
         ),
         radial-gradient(
           circle at 85% 30%,
-          rgba(236, 72, 153, 0.10),
+          rgba(255, 106, 61, 0.10),
           transparent 22%
         ),
         var(--bg);
@@ -224,7 +223,7 @@
 
     ::-webkit-scrollbar-track {
 
-      background: #090a0f;
+      background: #0a0f1a;
 
     }
 
@@ -269,7 +268,7 @@
         );
 
       box-shadow:
-        0 0 15px rgba(139, 92, 246, 0.7);
+        0 0 15px rgba(255, 177, 0, 0.7);
 
     }
 
@@ -431,7 +430,7 @@
       -webkit-backdrop-filter: blur(20px);
 
       background:
-        rgba(8, 9, 13, 0.56);
+        rgba(10, 15, 26, 0.56);
 
       border-bottom:
         1px solid rgba(255, 255, 255, 0.05);
@@ -446,7 +445,7 @@
     nav.scrolled {
 
       background:
-        rgba(8, 9, 13, 0.92);
+        rgba(10, 15, 26, 0.92);
 
       box-shadow:
         0 10px 35px rgba(0, 0, 0, 0.20);
@@ -461,7 +460,7 @@
       z-index: 2;
 
       font-family:
-        "Space Grotesk",
+        "Oswald",
         sans-serif;
 
       font-size: 24px;
@@ -534,7 +533,7 @@
       color: white;
 
       background:
-        rgba(139, 92, 246, 0.12);
+        rgba(255, 177, 0, 0.12);
 
     }
 
@@ -664,13 +663,13 @@
       border-radius: 100px;
 
       background:
-        rgba(139, 92, 246, 0.10);
+        rgba(255, 177, 0, 0.10);
 
       border:
-        1px solid rgba(139, 92, 246, 0.30);
+        1px solid rgba(255, 177, 0, 0.30);
 
       color:
-        #c4b5fd;
+        #ffd966;
 
       font-size: 13px;
 
@@ -716,7 +715,7 @@
     .hero h1 {
 
       font-family:
-        "Space Grotesk",
+        "Oswald",
         sans-serif;
 
       font-size:
@@ -737,8 +736,8 @@
         linear-gradient(
           90deg,
           #ffffff,
-          #c4b5fd,
-          #f472b6
+          #ffd966,
+          #ff6a3d
         );
 
       -webkit-background-clip: text;
@@ -759,7 +758,7 @@
       color: var(--accent-light);
 
       font-family:
-        "Space Grotesk",
+        "Oswald",
         sans-serif;
 
       font-weight: 600;
@@ -784,6 +783,96 @@
     @keyframes blink {
 
       50% {
+
+        opacity: 0;
+
+      }
+
+    }
+
+
+    /* ==========================================================
+       SIGNAL LINE — lane marking + fiber pulse, one motif for
+       both the runner and the network learner
+    ========================================================== */
+
+    .signal-line {
+
+      position: relative;
+
+      width: 230px;
+
+      height: 2px;
+
+      margin-bottom: 30px;
+
+      background-image:
+        repeating-linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.22) 0 9px,
+          transparent 9px 17px
+        );
+
+    }
+
+
+    .signal-pulse {
+
+      position: absolute;
+
+      top: 50%;
+
+      left: 0;
+
+      width: 9px;
+
+      height: 9px;
+
+      margin-top: -4.5px;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--accent),
+          var(--cyan)
+        );
+
+      box-shadow:
+        0 0 14px var(--accent);
+
+      animation:
+        signalRun 3.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+
+    }
+
+
+    @keyframes signalRun {
+
+      0% {
+
+        left: 0;
+
+        opacity: 0;
+
+      }
+
+      10% {
+
+        opacity: 1;
+
+      }
+
+      88% {
+
+        opacity: 1;
+
+      }
+
+      100% {
+
+        left: calc(100% - 9px);
 
         opacity: 0;
 
@@ -870,7 +959,7 @@
 
       box-shadow:
         0 12px 35px
-        rgba(139, 92, 246, 0.24);
+        rgba(255, 177, 0, 0.24);
 
     }
 
@@ -882,7 +971,7 @@
 
       box-shadow:
         0 18px 50px
-        rgba(139, 92, 246, 0.38);
+        rgba(255, 177, 0, 0.38);
 
     }
 
@@ -975,9 +1064,9 @@
       background:
         linear-gradient(
           135deg,
-          rgba(139, 92, 246, 0.4),
+          rgba(255, 177, 0, 0.4),
           transparent,
-          rgba(236, 72, 153, 0.3)
+          rgba(255, 106, 61, 0.3)
         );
 
       opacity: 0;
@@ -1017,10 +1106,10 @@
       background:
         linear-gradient(
           135deg,
-          rgba(139, 92, 246, 0.3),
-          rgba(236, 72, 153, 0.2)
+          rgba(255, 177, 0, 0.3),
+          rgba(255, 106, 61, 0.2)
         ),
-        #15161e;
+        #10182a;
 
     }
 
@@ -1092,7 +1181,7 @@
       border-radius: 100px;
 
       background:
-        rgba(8, 9, 13, 0.65);
+        rgba(10, 15, 26, 0.65);
 
       backdrop-filter:
         blur(10px);
@@ -1139,7 +1228,7 @@
     .profile-info h3 {
 
       font-family:
-        "Space Grotesk",
+        "Oswald",
         sans-serif;
 
       font-size: 25px;
@@ -1214,10 +1303,10 @@
         translateY(-3px);
 
       border-color:
-        rgba(139, 92, 246, 0.45);
+        rgba(255, 177, 0, 0.45);
 
       background:
-        rgba(139, 92, 246, 0.12);
+        rgba(255, 177, 0, 0.12);
 
     }
 
@@ -1287,7 +1376,7 @@
       display: block;
 
       font-family:
-        "Space Grotesk";
+        "Oswald";
 
       font-size: 32px;
 
@@ -1367,7 +1456,7 @@
     .section-title {
 
       font-family:
-        "Space Grotesk",
+        "Oswald",
         sans-serif;
 
       font-size:
@@ -1445,7 +1534,7 @@
     .glass h3 {
 
       font-family:
-        "Space Grotesk",
+        "Oswald",
         sans-serif;
 
       font-size:
@@ -1521,7 +1610,7 @@
         var(--accent);
 
       background:
-        rgba(139, 92, 246, 0.06);
+        rgba(255, 177, 0, 0.06);
 
       color:
         #c5c6ce;
@@ -1656,7 +1745,7 @@
         -60px;
 
       background:
-        rgba(139, 92, 246, 0.09);
+        rgba(255, 177, 0, 0.09);
 
       transition:
         0.5s;
@@ -1684,7 +1773,7 @@
         10px;
 
       font-family:
-        "Space Grotesk";
+        "Oswald";
 
       font-size:
         82px;
@@ -1725,11 +1814,11 @@
         26px;
 
       background:
-        rgba(139, 92, 246, 0.10);
+        rgba(255, 177, 0, 0.10);
 
       border:
         1px solid
-        rgba(139, 92, 246, 0.20);
+        rgba(255, 177, 0, 0.20);
 
     }
 
@@ -1950,7 +2039,7 @@
         225px;
 
       background:
-        #15161e;
+        #10182a;
 
       display:
         flex;
@@ -2017,7 +2106,7 @@
         center;
 
       background:
-        rgba(8, 9, 13, 0.32);
+        rgba(10, 15, 26, 0.32);
 
       opacity:
         0;
@@ -2120,7 +2209,7 @@
         var(--accent-light);
 
       background:
-        rgba(139, 92, 246, 0.09);
+        rgba(255, 177, 0, 0.09);
 
       font-size:
         10px;
@@ -2459,7 +2548,7 @@
       background:
         radial-gradient(
           circle at center,
-          rgba(139, 92, 246, 0.14),
+          rgba(255, 177, 0, 0.14),
           transparent 60%
         ),
         var(--bg-card);
@@ -2495,7 +2584,7 @@
         50%;
 
       background:
-        rgba(236, 72, 153, 0.10);
+        rgba(255, 106, 61, 0.10);
 
       filter:
         blur(40px);
@@ -2506,7 +2595,7 @@
     .contact h2 {
 
       font-family:
-        "Space Grotesk";
+        "Oswald";
 
       font-size:
         clamp(40px, 6vw, 70px);
@@ -2529,7 +2618,7 @@
         linear-gradient(
           90deg,
           var(--accent-light),
-          #f472b6
+          #ff6a3d
         );
 
       -webkit-background-clip:
@@ -2643,8 +2732,8 @@
       background:
         linear-gradient(
           135deg,
-          rgba(139, 92, 246, 0.90),
-          rgba(236, 72, 153, 0.90)
+          rgba(255, 177, 0, 0.90),
+          rgba(255, 106, 61, 0.90)
         );
 
       cursor:
@@ -2664,7 +2753,7 @@
 
       box-shadow:
         0 10px 35px
-        rgba(139, 92, 246, 0.25);
+        rgba(255, 177, 0, 0.25);
 
     }
 
@@ -2868,7 +2957,7 @@
           30px;
 
         background:
-          rgba(8, 9, 13, 0.97);
+          rgba(10, 15, 26, 0.97);
 
         backdrop-filter:
           blur(30px);
@@ -2905,7 +2994,7 @@
       nav ul a {
 
         font-family:
-          "Space Grotesk";
+          "Oswald";
 
         font-size:
           26px;
@@ -2977,6 +3066,17 @@
 
         font-size:
           15px;
+
+      }
+
+
+      .signal-line {
+
+        margin-left:
+          auto;
+
+        margin-right:
+          auto;
 
       }
 
@@ -3365,6 +3465,13 @@
       ></div>
 
 
+      <div class="signal-line" aria-hidden="true">
+
+        <span class="signal-pulse"></span>
+
+      </div>
+
+
       <p class="hero-description">
 
         Pelajar SMK Taruna Bhakti yang memiliki semangat
@@ -3644,9 +3751,9 @@
 
         <div class="quote">
 
-          “Terus belajar, terus berkembang,
+          "Terus belajar, terus berkembang,
           dan jangan takut mencoba sesuatu
-          yang baru.”
+          yang baru."
 
         </div>
 
@@ -5354,4 +5461,3 @@
 </body>
 
 </html>
-```
