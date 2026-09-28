@@ -3,9 +3,9 @@
 
 <head>
 
-  <!-- =========================
+  <!-- ==========================================================
        GOOGLE ANALYTICS
-  ========================== -->
+  =========================================================== -->
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2D86N0FS7L"></script>
 
@@ -16,14 +16,14 @@
       dataLayer.push(arguments);
     }
 
-    gtag('js', new Date());
-    gtag('config', 'G-2D86N0FS7L');
+    gtag("js", new Date());
+    gtag("config", "G-2D86N0FS7L");
   </script>
 
 
-  <!-- =========================
+  <!-- ==========================================================
        META
-  ========================== -->
+  =========================================================== -->
 
   <meta charset="UTF-8">
 
@@ -39,21 +39,17 @@
 
   <meta
     name="theme-color"
-    content="#0a0f1a"
+    content="#080b12"
   >
-
 
   <title>Michelle | Personal Portfolio</title>
 
 
-  <!-- =========================
+  <!-- ==========================================================
        GOOGLE FONT
-  ========================== -->
+  =========================================================== -->
 
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
   <link
     rel="preconnect"
@@ -67,9 +63,9 @@
   >
 
 
-  <!-- =========================
-       ICONS
-  ========================== -->
+  <!-- ==========================================================
+       FONT AWESOME
+  =========================================================== -->
 
   <link
     rel="stylesheet"
@@ -81,67 +77,53 @@
 
     /* ==========================================================
        ROOT
-    ========================================================== */
+    =========================================================== */
 
     :root {
 
-      --bg: #0a0f1a;
+      --bg: #080b12;
+      --bg-secondary: #0c111c;
 
-      --bg-secondary: #0d1424;
+      --bg-card: rgba(255,255,255,0.045);
+      --bg-card-hover: rgba(255,255,255,0.075);
 
-      --bg-card: rgba(255, 255, 255, 0.05);
+      --border: rgba(255,255,255,0.09);
+      --border-hover: rgba(255,177,0,0.48);
 
-      --bg-card-hover: rgba(255, 255, 255, 0.078);
-
-      --border: rgba(255, 255, 255, 0.10);
-
-      --border-hover: rgba(255, 177, 0, 0.50);
-
-      --text: #f2f4f9;
-
-      --muted: #94a0b7;
+      --text: #f5f7fb;
+      --muted: #929bad;
 
       --accent: #ffb100;
+      --accent-light: #ffd86b;
+      --accent2: #ff6238;
 
-      --accent-light: #ffd166;
-
-      --accent2: #ff6a3d;
-
-      --cyan: #2dd4c7;
-
+      --cyan: #42d9ff;
+      --blue: #4f8cff;
       --green: #34d399;
 
       --radius: 24px;
-
       --navbar-height: 76px;
 
       --shadow:
-        0 30px 80px rgba(0, 0, 0, 0.35);
+        0 30px 80px rgba(0,0,0,0.38);
 
     }
 
 
     /* ==========================================================
        RESET
-    ========================================================== */
+    =========================================================== */
 
     * {
-
       margin: 0;
-
       padding: 0;
-
       box-sizing: border-box;
-
     }
 
 
     html {
-
       scroll-behavior: smooth;
-
       scroll-padding-top: 90px;
-
     }
 
 
@@ -150,16 +132,25 @@
       font-family: "Inter", sans-serif;
 
       background:
+
         radial-gradient(
-          circle at 15% 15%,
-          rgba(255, 177, 0, 0.15),
+          circle at 10% 10%,
+          rgba(255,177,0,0.12),
           transparent 25%
         ),
+
         radial-gradient(
-          circle at 85% 30%,
-          rgba(255, 106, 61, 0.10),
-          transparent 22%
+          circle at 90% 25%,
+          rgba(66,217,255,0.07),
+          transparent 24%
         ),
+
+        radial-gradient(
+          circle at 50% 100%,
+          rgba(255,98,56,0.06),
+          transparent 30%
+        ),
+
         var(--bg);
 
       color: var(--text);
@@ -172,59 +163,43 @@
 
 
     body.menu-open {
-
       overflow: hidden;
-
     }
 
 
     ::selection {
-
       background: var(--accent);
-
-      color: white;
-
+      color: #080b12;
     }
 
 
     a {
-
       color: inherit;
-
     }
 
 
     img {
-
       max-width: 100%;
-
       display: block;
-
     }
 
 
     button {
-
       font-family: inherit;
-
     }
 
 
     /* ==========================================================
        SCROLLBAR
-    ========================================================== */
+    =========================================================== */
 
     ::-webkit-scrollbar {
-
       width: 8px;
-
     }
 
 
     ::-webkit-scrollbar-track {
-
-      background: #0a0f1a;
-
+      background: #080b12;
     }
 
 
@@ -243,19 +218,17 @@
 
     /* ==========================================================
        SCROLL PROGRESS
-    ========================================================== */
+    =========================================================== */
 
     .scroll-progress {
 
       position: fixed;
 
       top: 0;
-
       left: 0;
 
-      height: 3px;
-
       width: 0%;
+      height: 3px;
 
       z-index: 10000;
 
@@ -268,32 +241,31 @@
         );
 
       box-shadow:
-        0 0 15px rgba(255, 177, 0, 0.7);
+        0 0 15px rgba(255,177,0,0.7);
 
     }
 
 
     /* ==========================================================
        BACKGROUND ORBS
-    ========================================================== */
+    =========================================================== */
 
     .orb {
 
       position: fixed;
 
       width: 320px;
-
       height: 320px;
 
       border-radius: 50%;
 
       filter: blur(110px);
 
-      opacity: 0.15;
+      opacity: 0.12;
 
       pointer-events: none;
 
-      z-index: -2;
+      z-index: -3;
 
     }
 
@@ -303,10 +275,10 @@
       background: var(--accent);
 
       top: 10%;
-
       left: -120px;
 
-      animation: floatingOrb 10s ease-in-out infinite;
+      animation:
+        floatingOrb 10s ease-in-out infinite;
 
     }
 
@@ -316,10 +288,10 @@
       background: var(--accent2);
 
       right: -120px;
-
       top: 52%;
 
-      animation: floatingOrb 12s ease-in-out infinite reverse;
+      animation:
+        floatingOrb 12s ease-in-out infinite reverse;
 
     }
 
@@ -329,16 +301,15 @@
       background: var(--cyan);
 
       width: 220px;
-
       height: 220px;
 
       bottom: -50px;
-
       left: 40%;
 
       opacity: 0.08;
 
-      animation: floatingOrb 14s ease-in-out infinite;
+      animation:
+        floatingOrb 14s ease-in-out infinite;
 
     }
 
@@ -347,19 +318,11 @@
 
       0%,
       100% {
-
-        transform:
-          translateY(0)
-          translateX(0);
-
+        transform: translate(0,0);
       }
 
       50% {
-
-        transform:
-          translateY(-50px)
-          translateX(40px);
-
+        transform: translate(40px,-50px);
       }
 
     }
@@ -367,14 +330,13 @@
 
     /* ==========================================================
        CURSOR GLOW
-    ========================================================== */
+    =========================================================== */
 
     .cursor-glow {
 
       position: fixed;
 
       width: 350px;
-
       height: 350px;
 
       border-radius: 50%;
@@ -382,7 +344,7 @@
       pointer-events: none;
 
       transform:
-        translate(-50%, -50%);
+        translate(-50%,-50%);
 
       z-index: -1;
 
@@ -391,7 +353,7 @@
       background:
         radial-gradient(
           circle,
-          var(--accent) 0%,
+          var(--accent),
           transparent 65%
         );
 
@@ -399,19 +361,343 @@
 
 
     /* ==========================================================
+       WEATHER SYSTEM
+    =========================================================== */
+
+    #weather-effects {
+
+      position: fixed;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      z-index: 9998;
+
+      overflow: hidden;
+
+    }
+
+
+    /* ==========================================================
+       RAIN
+    =========================================================== */
+
+    #rain-container {
+
+      position: absolute;
+
+      inset: 0;
+
+      overflow: hidden;
+
+    }
+
+
+    .raindrop {
+
+      position: absolute;
+
+      top: -40px;
+
+      width: 1.5px;
+
+      height: 25px;
+
+      border-radius: 100%;
+
+      background:
+        linear-gradient(
+          to bottom,
+          transparent,
+          rgba(175,220,255,0.75)
+        );
+
+      filter: blur(0.2px);
+
+      animation:
+        rainFall linear infinite;
+
+    }
+
+
+    @keyframes rainFall {
+
+      0% {
+
+        transform:
+          translate3d(0,-40px,0)
+          rotate(12deg);
+
+        opacity: 0;
+
+      }
+
+      10% {
+        opacity: 0.75;
+      }
+
+      90% {
+        opacity: 0.55;
+      }
+
+      100% {
+
+        transform:
+          translate3d(-90px,110vh,0)
+          rotate(12deg);
+
+        opacity: 0;
+
+      }
+
+    }
+
+
+    /* ==========================================================
+       RAIN SPLASH
+    =========================================================== */
+
+    .rain-splash {
+
+      position: absolute;
+
+      width: 8px;
+      height: 3px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(150,210,255,0.25);
+
+      animation:
+        splash 0.8s linear infinite;
+
+    }
+
+
+    @keyframes splash {
+
+      0% {
+        transform: scale(0);
+        opacity: 0;
+      }
+
+      50% {
+        transform: scale(1);
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: scale(2.5);
+        opacity: 0;
+      }
+
+    }
+
+
+    /* ==========================================================
+       FALLING LEAVES
+    =========================================================== */
+
+    #leaf-container {
+
+      position: absolute;
+
+      inset: 0;
+
+      overflow: hidden;
+
+    }
+
+
+    .leaf {
+
+      position: absolute;
+
+      top: -50px;
+
+      width: 14px;
+      height: 20px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #e2aa3b,
+          #8a4d1e
+        );
+
+      border-radius:
+        100% 0 100% 0;
+
+      opacity: 0.7;
+
+      filter:
+        drop-shadow(
+          0 0 5px
+          rgba(255,177,0,0.12)
+        );
+
+      animation:
+        leafFall linear infinite;
+
+    }
+
+
+    .leaf::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 1px;
+      height: 18px;
+
+      left: 50%;
+      top: 1px;
+
+      background:
+        rgba(255,255,255,0.25);
+
+      transform:
+        rotate(25deg);
+
+    }
+
+
+    @keyframes leafFall {
+
+      0% {
+
+        transform:
+          translate3d(0,-50px,0)
+          rotate(0deg)
+          scale(0.7);
+
+        opacity: 0;
+
+      }
+
+      10% {
+        opacity: 0.8;
+      }
+
+      25% {
+
+        transform:
+          translate3d(80px,25vh,0)
+          rotate(120deg)
+          scale(0.9);
+
+      }
+
+      50% {
+
+        transform:
+          translate3d(-65px,50vh,0)
+          rotate(240deg)
+          scale(1);
+
+      }
+
+      75% {
+
+        transform:
+          translate3d(90px,75vh,0)
+          rotate(340deg)
+          scale(0.85);
+
+      }
+
+      100% {
+
+        transform:
+          translate3d(-80px,110vh,0)
+          rotate(500deg)
+          scale(0.7);
+
+        opacity: 0;
+
+      }
+
+    }
+
+
+    /* ==========================================================
+       LIGHTNING
+    =========================================================== */
+
+    #lightning-flash {
+
+      position: fixed;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      opacity: 0;
+
+      background:
+
+        radial-gradient(
+          circle at 50% 15%,
+          rgba(220,245,255,0.9),
+          rgba(150,200,255,0.15) 35%,
+          transparent 70%
+        );
+
+    }
+
+
+    #lightning-flash.active {
+
+      animation:
+        lightningFlash 0.6s ease-out;
+
+    }
+
+
+    @keyframes lightningFlash {
+
+      0% {
+        opacity: 0;
+      }
+
+      7% {
+        opacity: 0.85;
+      }
+
+      12% {
+        opacity: 0.05;
+      }
+
+      19% {
+        opacity: 0.7;
+      }
+
+      28% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+
+    }
+
+
+    /* ==========================================================
        NAVBAR
-    ========================================================== */
+    =========================================================== */
 
     nav {
 
       position: fixed;
 
       top: 0;
-
       left: 0;
 
       width: 100%;
-
       height: var(--navbar-height);
 
       padding:
@@ -419,21 +705,26 @@
 
       display: flex;
 
-      justify-content: space-between;
+      justify-content:
+        space-between;
 
-      align-items: center;
+      align-items:
+        center;
 
       z-index: 1000;
 
-      backdrop-filter: blur(20px);
+      backdrop-filter:
+        blur(20px);
 
-      -webkit-backdrop-filter: blur(20px);
+      -webkit-backdrop-filter:
+        blur(20px);
 
       background:
-        rgba(10, 15, 26, 0.56);
+        rgba(8,11,18,0.55);
 
       border-bottom:
-        1px solid rgba(255, 255, 255, 0.05);
+        1px solid
+        rgba(255,255,255,0.05);
 
       transition:
         background 0.3s ease,
@@ -445,10 +736,11 @@
     nav.scrolled {
 
       background:
-        rgba(10, 15, 26, 0.92);
+        rgba(8,11,18,0.93);
 
       box-shadow:
-        0 10px 35px rgba(0, 0, 0, 0.20);
+        0 10px 35px
+        rgba(0,0,0,0.25);
 
     }
 
@@ -475,9 +767,7 @@
 
 
     .logo span {
-
       color: var(--accent);
-
     }
 
 
@@ -505,7 +795,7 @@
 
       text-decoration: none;
 
-      color: #a9abb6;
+      color: #a9afbd;
 
       font-size: 13px;
 
@@ -523,7 +813,7 @@
       color: white;
 
       background:
-        rgba(255, 255, 255, 0.05);
+        rgba(255,255,255,0.05);
 
     }
 
@@ -533,7 +823,7 @@
       color: white;
 
       background:
-        rgba(255, 177, 0, 0.12);
+        rgba(255,177,0,0.12);
 
     }
 
@@ -552,7 +842,6 @@
         translateX(-50%);
 
       width: 5px;
-
       height: 5px;
 
       border-radius: 50%;
@@ -561,7 +850,8 @@
         var(--accent);
 
       box-shadow:
-        0 0 10px var(--accent);
+        0 0 10px
+        var(--accent);
 
     }
 
@@ -571,17 +861,18 @@
       display: none;
 
       width: 44px;
-
       height: 44px;
 
-      border: 1px solid var(--border);
+      border:
+        1px solid
+        var(--border);
 
       border-radius: 12px;
 
       color: white;
 
       background:
-        rgba(255, 255, 255, 0.04);
+        rgba(255,255,255,0.04);
 
       cursor: pointer;
 
@@ -596,15 +887,14 @@
 
     /* ==========================================================
        HERO
-    ========================================================== */
+    =========================================================== */
 
     .hero {
 
       min-height: 100vh;
 
       padding:
-        145px 7%
-        80px;
+        145px 7% 80px;
 
       display: grid;
 
@@ -663,10 +953,11 @@
       border-radius: 100px;
 
       background:
-        rgba(255, 177, 0, 0.10);
+        rgba(255,177,0,0.09);
 
       border:
-        1px solid rgba(255, 177, 0, 0.30);
+        1px solid
+        rgba(255,177,0,0.27);
 
       color:
         #ffd966;
@@ -681,7 +972,6 @@
     .dot {
 
       width: 7px;
-
       height: 7px;
 
       background:
@@ -690,7 +980,8 @@
       border-radius: 50%;
 
       box-shadow:
-        0 0 15px var(--accent);
+        0 0 15px
+        var(--accent);
 
       animation:
         pulse 1.5s infinite;
@@ -719,7 +1010,7 @@
         sans-serif;
 
       font-size:
-        clamp(58px, 8vw, 112px);
+        clamp(58px,8vw,112px);
 
       line-height: 0.90;
 
@@ -744,7 +1035,8 @@
 
       background-clip: text;
 
-      -webkit-text-fill-color: transparent;
+      -webkit-text-fill-color:
+        transparent;
 
     }
 
@@ -755,7 +1047,8 @@
 
       margin-bottom: 18px;
 
-      color: var(--accent-light);
+      color:
+        var(--accent-light);
 
       font-family:
         "Oswald",
@@ -783,33 +1076,30 @@
     @keyframes blink {
 
       50% {
-
         opacity: 0;
-
       }
 
     }
 
 
     /* ==========================================================
-       SIGNAL LINE — lane marking + fiber pulse, one motif for
-       both the runner and the network learner
-    ========================================================== */
+       SIGNAL LINE
+    =========================================================== */
 
     .signal-line {
 
       position: relative;
 
       width: 230px;
-
       height: 2px;
 
       margin-bottom: 30px;
 
       background-image:
+
         repeating-linear-gradient(
           90deg,
-          rgba(255, 255, 255, 0.22) 0 9px,
+          rgba(255,255,255,0.22) 0 9px,
           transparent 9px 17px
         );
 
@@ -821,11 +1111,9 @@
       position: absolute;
 
       top: 50%;
-
       left: 0;
 
       width: 9px;
-
       height: 9px;
 
       margin-top: -4.5px;
@@ -840,10 +1128,13 @@
         );
 
       box-shadow:
-        0 0 14px var(--accent);
+        0 0 14px
+        var(--accent);
 
       animation:
-        signalRun 3.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+        signalRun 3.4s
+        cubic-bezier(0.65,0,0.35,1)
+        infinite;
 
     }
 
@@ -851,31 +1142,21 @@
     @keyframes signalRun {
 
       0% {
-
         left: 0;
-
         opacity: 0;
-
       }
 
       10% {
-
         opacity: 1;
-
       }
 
       88% {
-
         opacity: 1;
-
       }
 
       100% {
-
         left: calc(100% - 9px);
-
         opacity: 0;
-
       }
 
     }
@@ -885,7 +1166,8 @@
 
       max-width: 600px;
 
-      color: var(--muted);
+      color:
+        var(--muted);
 
       font-size: 16px;
 
@@ -928,8 +1210,6 @@
 
       border-radius: 13px;
 
-      text-decoration: none;
-
       border: none;
 
       cursor: pointer;
@@ -937,6 +1217,8 @@
       font-weight: 700;
 
       font-size: 13px;
+
+      text-decoration: none;
 
       transition:
         transform 0.3s,
@@ -959,7 +1241,7 @@
 
       box-shadow:
         0 12px 35px
-        rgba(255, 177, 0, 0.24);
+        rgba(255,177,0,0.24);
 
     }
 
@@ -971,7 +1253,7 @@
 
       box-shadow:
         0 18px 50px
-        rgba(255, 177, 0, 0.38);
+        rgba(255,177,0,0.38);
 
     }
 
@@ -981,10 +1263,11 @@
       color: white;
 
       background:
-        rgba(255, 255, 255, 0.035);
+        rgba(255,255,255,0.035);
 
       border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
     }
 
@@ -995,14 +1278,14 @@
         translateY(-4px);
 
       background:
-        rgba(255, 255, 255, 0.08);
+        rgba(255,255,255,0.08);
 
     }
 
 
     /* ==========================================================
        PROFILE
-    ========================================================== */
+    =========================================================== */
 
     .profile-wrapper {
 
@@ -1020,7 +1303,7 @@
       position: relative;
 
       width:
-        min(370px, 90vw);
+        min(370px,90vw);
 
       padding: 15px;
 
@@ -1029,12 +1312,13 @@
       background:
         linear-gradient(
           145deg,
-          rgba(255, 255, 255, 0.12),
-          rgba(255, 255, 255, 0.02)
+          rgba(255,255,255,0.12),
+          rgba(255,255,255,0.02)
         );
 
       border:
-        1px solid rgba(255, 255, 255, 0.10);
+        1px solid
+        rgba(255,255,255,0.10);
 
       box-shadow:
         var(--shadow);
@@ -1064,15 +1348,14 @@
       background:
         linear-gradient(
           135deg,
-          rgba(255, 177, 0, 0.4),
+          rgba(255,177,0,0.4),
           transparent,
-          rgba(255, 106, 61, 0.3)
+          rgba(255,106,61,0.3)
         );
 
       opacity: 0;
 
-      transition:
-        0.4s;
+      transition: 0.4s;
 
     }
 
@@ -1087,9 +1370,7 @@
 
 
     .profile-card:hover::before {
-
       opacity: 1;
-
     }
 
 
@@ -1106,20 +1387,17 @@
       background:
         linear-gradient(
           135deg,
-          rgba(255, 177, 0, 0.3),
-          rgba(255, 106, 61, 0.2)
+          rgba(255,177,0,0.3),
+          rgba(255,106,61,0.2)
         ),
         #10182a;
 
     }
 
 
-    /* FOTO PROFILE TETAP DIPERTAHANKAN */
-
     .profile-image img {
 
       width: 100%;
-
       height: 100%;
 
       object-fit: cover;
@@ -1150,7 +1428,7 @@
       background:
         linear-gradient(
           to top,
-          rgba(5, 5, 10, 0.42),
+          rgba(5,5,10,0.42),
           transparent 40%
         );
 
@@ -1164,7 +1442,6 @@
       position: absolute;
 
       top: 18px;
-
       right: 18px;
 
       z-index: 2;
@@ -1181,13 +1458,14 @@
       border-radius: 100px;
 
       background:
-        rgba(10, 15, 26, 0.65);
+        rgba(10,15,26,0.65);
 
       backdrop-filter:
         blur(10px);
 
       border:
-        1px solid rgba(255, 255, 255, 0.1);
+        1px solid
+        rgba(255,255,255,0.1);
 
       color:
         #d8d8df;
@@ -1202,7 +1480,6 @@
     .profile-badge span {
 
       width: 7px;
-
       height: 7px;
 
       border-radius: 50%;
@@ -1211,7 +1488,8 @@
         var(--green);
 
       box-shadow:
-        0 0 10px var(--green);
+        0 0 10px
+        var(--green);
 
     }
 
@@ -1219,8 +1497,7 @@
     .profile-info {
 
       padding:
-        21px 8px
-        8px;
+        21px 8px 8px;
 
     }
 
@@ -1249,8 +1526,8 @@
 
 
     /* ==========================================================
-       SOCIAL LINKS
-    ========================================================== */
+       SOCIALS
+    =========================================================== */
 
     .socials {
 
@@ -1266,7 +1543,6 @@
     .social-link {
 
       width: 37px;
-
       height: 37px;
 
       display: flex;
@@ -1280,40 +1556,39 @@
       text-decoration: none;
 
       background:
-        rgba(255, 255, 255, 0.04);
+        rgba(255,255,255,0.04);
 
       border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
       color:
         var(--muted);
 
-      transition:
-        0.3s;
+      transition: 0.3s;
 
     }
 
 
     .social-link:hover {
 
-      color:
-        white;
+      color: white;
 
       transform:
         translateY(-3px);
 
       border-color:
-        rgba(255, 177, 0, 0.45);
+        rgba(255,177,0,0.45);
 
       background:
-        rgba(255, 177, 0, 0.12);
+        rgba(255,177,0,0.12);
 
     }
 
 
     /* ==========================================================
        STATS
-    ========================================================== */
+    =========================================================== */
 
     .stats {
 
@@ -1332,7 +1607,7 @@
       display: grid;
 
       grid-template-columns:
-        repeat(4, 1fr);
+        repeat(4,1fr);
 
       gap: 14px;
 
@@ -1349,13 +1624,13 @@
       border-radius: 20px;
 
       background:
-        rgba(255, 255, 255, 0.035);
+        rgba(255,255,255,0.035);
 
       border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
-      transition:
-        0.3s;
+      transition: 0.3s;
 
     }
 
@@ -1414,8 +1689,8 @@
 
 
     /* ==========================================================
-       SECTION GLOBAL
-    ========================================================== */
+       GLOBAL SECTION
+    =========================================================== */
 
     section {
 
@@ -1445,8 +1720,7 @@
 
       letter-spacing: 3px;
 
-      text-transform:
-        uppercase;
+      text-transform: uppercase;
 
       margin-bottom: 14px;
 
@@ -1460,7 +1734,7 @@
         sans-serif;
 
       font-size:
-        clamp(38px, 5vw, 64px);
+        clamp(38px,5vw,64px);
 
       line-height: 1;
 
@@ -1484,8 +1758,8 @@
 
 
     /* ==========================================================
-       GLASS CARD
-    ========================================================== */
+       GLASS
+    =========================================================== */
 
     .glass {
 
@@ -1495,13 +1769,13 @@
         var(--bg-card);
 
       border:
-        1px solid var(--border);
+        1px solid
+        var(--border);
 
       border-radius:
         var(--radius);
 
-      padding:
-        30px;
+      padding: 30px;
 
       backdrop-filter:
         blur(15px);
@@ -1537,11 +1811,9 @@
         "Oswald",
         sans-serif;
 
-      font-size:
-        22px;
+      font-size: 22px;
 
-      margin-bottom:
-        14px;
+      margin-bottom: 14px;
 
     }
 
@@ -1551,18 +1823,16 @@
       color:
         var(--muted);
 
-      line-height:
-        1.8;
+      line-height: 1.8;
 
-      font-size:
-        14px;
+      font-size: 14px;
 
     }
 
 
     /* ==========================================================
        ABOUT
-    ========================================================== */
+    =========================================================== */
 
     .about-grid {
 
@@ -1571,184 +1841,144 @@
       grid-template-columns:
         1fr 1fr;
 
-      gap:
-        24px;
+      gap: 24px;
 
     }
 
 
     .about-intro {
 
-      min-height:
-        300px;
+      min-height: 300px;
 
-      display:
-        flex;
+      display: flex;
 
-      flex-direction:
-        column;
+      flex-direction: column;
 
-      justify-content:
-        space-between;
+      justify-content: space-between;
 
     }
 
 
     .quote {
 
-      margin-top:
-        24px;
+      margin-top: 24px;
 
       padding:
         16px 18px;
 
-      border-radius:
-        15px;
+      border-radius: 15px;
 
       border-left:
         3px solid
         var(--accent);
 
       background:
-        rgba(255, 177, 0, 0.06);
+        rgba(255,177,0,0.06);
 
       color:
         #c5c6ce;
 
-      line-height:
-        1.7;
+      line-height: 1.7;
 
-      font-size:
-        13px;
+      font-size: 13px;
 
     }
 
 
     .info-list {
 
-      display:
-        grid;
+      display: grid;
 
-      gap:
-        15px;
+      gap: 15px;
 
     }
 
 
     .info-item {
 
-      display:
-        flex;
+      display: flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      justify-content:
-        space-between;
+      justify-content: space-between;
 
-      gap:
-        20px;
+      gap: 20px;
 
-      padding-bottom:
-        14px;
+      padding-bottom: 14px;
 
       border-bottom:
         1px solid
-        rgba(255, 255, 255, 0.06);
+        rgba(255,255,255,0.06);
 
-      font-size:
-        13px;
+      font-size: 13px;
 
     }
 
 
     .info-item:last-child {
 
-      border-bottom:
-        none;
+      border-bottom: none;
 
-      padding-bottom:
-        0;
+      padding-bottom: 0;
 
     }
 
 
     .info-item span:first-child {
-
-      color:
-        var(--muted);
-
+      color: var(--muted);
     }
 
 
     .info-item strong {
-
-      text-align:
-        right;
-
+      text-align: right;
     }
 
 
     /* ==========================================================
        HOBBY
-    ========================================================== */
+    =========================================================== */
 
     .hobby-grid {
 
-      display:
-        grid;
+      display: grid;
 
       grid-template-columns:
-        repeat(2, 1fr);
+        repeat(2,1fr);
 
-      gap:
-        24px;
+      gap: 24px;
 
     }
 
 
     .hobby {
 
-      min-height:
-        260px;
+      min-height: 260px;
 
-      position:
-        relative;
+      position: relative;
 
-      overflow:
-        hidden;
+      overflow: hidden;
 
     }
 
 
     .hobby::after {
 
-      content:
-        "";
+      content: "";
 
-      position:
-        absolute;
+      position: absolute;
 
-      width:
-        140px;
+      width: 140px;
+      height: 140px;
 
-      height:
-        140px;
+      border-radius: 50%;
 
-      border-radius:
-        50%;
-
-      right:
-        -60px;
-
-      bottom:
-        -60px;
+      right: -60px;
+      bottom: -60px;
 
       background:
-        rgba(255, 177, 0, 0.09);
+        rgba(255,177,0,0.09);
 
-      transition:
-        0.5s;
+      transition: 0.5s;
 
     }
 
@@ -1763,141 +1993,111 @@
 
     .hobby-number {
 
-      position:
-        absolute;
+      position: absolute;
 
-      right:
-        20px;
-
-      top:
-        10px;
+      right: 20px;
+      top: 10px;
 
       font-family:
         "Oswald";
 
-      font-size:
-        82px;
+      font-size: 82px;
 
-      font-weight:
-        700;
+      font-weight: 700;
 
       color:
-        rgba(255, 255, 255, 0.045);
+        rgba(255,255,255,0.045);
 
     }
 
 
     .hobby-icon {
 
-      width:
-        58px;
+      width: 58px;
+      height: 58px;
 
-      height:
-        58px;
+      display: flex;
 
-      display:
-        flex;
+      align-items: center;
+      justify-content: center;
 
-      align-items:
-        center;
+      border-radius: 17px;
 
-      justify-content:
-        center;
+      margin-bottom: 25px;
 
-      border-radius:
-        17px;
-
-      margin-bottom:
-        25px;
-
-      font-size:
-        26px;
+      font-size: 26px;
 
       background:
-        rgba(255, 177, 0, 0.10);
+        rgba(255,177,0,0.10);
 
       border:
         1px solid
-        rgba(255, 177, 0, 0.20);
+        rgba(255,177,0,0.20);
 
     }
 
 
     .hobby h3 {
 
-      font-size:
-        25px;
+      font-size: 25px;
 
-      margin-bottom:
-        10px;
+      margin-bottom: 10px;
 
     }
 
 
     /* ==========================================================
        SKILLS
-    ========================================================== */
+    =========================================================== */
 
     .skills-grid {
 
-      display:
-        grid;
+      display: grid;
 
       grid-template-columns:
-        repeat(2, 1fr);
+        repeat(2,1fr);
 
-      gap:
-        24px;
+      gap: 24px;
 
     }
 
 
     .skill-card {
 
-      display:
-        flex;
+      display: flex;
 
-      flex-direction:
-        column;
+      flex-direction: column;
 
-      gap:
-        24px;
+      gap: 24px;
 
     }
 
 
     .skill {
 
-      display:
-        grid;
+      display: grid;
 
-      gap:
-        10px;
+      gap: 10px;
 
     }
 
 
     .skill-info {
 
-      display:
-        flex;
+      display: flex;
 
-      justify-content:
-        space-between;
+      justify-content: space-between;
 
-      font-size:
-        13px;
+      font-size: 13px;
 
     }
 
 
     .skill-info span:first-child {
 
-      color:
-        #e7e7ec;
+      color: #e7e7ec;
 
-      font-weight:
-        600;
+      font-weight: 600;
 
     }
 
@@ -1912,31 +2112,25 @@
 
     .skill-bar {
 
-      height:
-        8px;
+      height: 8px;
 
       background:
-        rgba(255, 255, 255, 0.05);
+        rgba(255,255,255,0.05);
 
-      border-radius:
-        100px;
+      border-radius: 100px;
 
-      overflow:
-        hidden;
+      overflow: hidden;
 
     }
 
 
     .skill-progress {
 
-      width:
-        0;
+      width: 0;
 
-      height:
-        100%;
+      height: 100%;
 
-      border-radius:
-        inherit;
+      border-radius: inherit;
 
       background:
         linear-gradient(
@@ -1953,121 +2147,96 @@
 
     .tools-list {
 
-      display:
-        flex;
+      display: flex;
 
-      flex-wrap:
-        wrap;
+      flex-wrap: wrap;
 
-      gap:
-        10px;
+      gap: 10px;
 
     }
 
 
     .tool-tag {
 
-      display:
-        inline-flex;
+      display: inline-flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      gap:
-        7px;
+      gap: 7px;
 
       padding:
         10px 13px;
 
-      border-radius:
-        11px;
+      border-radius: 11px;
 
       color:
         #c5c6ce;
 
-      font-size:
-        12px;
+      font-size: 12px;
 
       background:
-        rgba(255, 255, 255, 0.035);
+        rgba(255,255,255,0.035);
 
       border:
         1px solid
-        rgba(255, 255, 255, 0.07);
+        rgba(255,255,255,0.07);
 
     }
 
 
     /* ==========================================================
        CERTIFICATES
-    ========================================================== */
+    =========================================================== */
 
     .certificates {
 
-      display:
-        grid;
+      display: grid;
 
       grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3,1fr);
 
-      gap:
-        24px;
+      gap: 24px;
 
     }
 
 
     .certificate {
 
-      overflow:
-        hidden;
+      overflow: hidden;
 
-      padding:
-        0;
+      padding: 0;
 
-      cursor:
-        pointer;
+      cursor: pointer;
 
     }
 
 
     .certificate-img {
 
-      position:
-        relative;
+      position: relative;
 
-      height:
-        225px;
+      height: 225px;
 
       background:
         #10182a;
 
-      display:
-        flex;
+      display: flex;
 
-      justify-content:
-        center;
+      justify-content: center;
 
-      align-items:
-        center;
+      align-items: center;
 
-      overflow:
-        hidden;
+      overflow: hidden;
 
     }
 
 
-    /* FOTO SERTIFIKAT TETAP DIPERTAHANKAN */
-
     .certificate-img img {
 
-      width:
-        100%;
+      width: 100%;
+      height: 100%;
 
-      height:
-        100%;
-
-      object-fit:
-        cover;
+      object-fit: cover;
 
       transition:
         transform 0.5s ease,
@@ -2090,61 +2259,45 @@
 
     .certificate-view {
 
-      position:
-        absolute;
+      position: absolute;
 
-      inset:
-        0;
+      inset: 0;
 
-      display:
-        flex;
+      display: flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      justify-content:
-        center;
+      justify-content: center;
 
       background:
-        rgba(10, 15, 26, 0.32);
+        rgba(10,15,26,0.32);
 
-      opacity:
-        0;
+      opacity: 0;
 
-      transition:
-        0.3s;
+      transition: 0.3s;
 
     }
 
 
     .certificate-view i {
 
-      width:
-        48px;
+      width: 48px;
+      height: 48px;
 
-      height:
-        48px;
+      display: flex;
 
-      display:
-        flex;
+      align-items: center;
+      justify-content: center;
 
-      align-items:
-        center;
-
-      justify-content:
-        center;
-
-      border-radius:
-        50%;
+      border-radius: 50%;
 
       background:
-        rgba(255, 255, 255, 0.14);
+        rgba(255,255,255,0.14);
 
       backdrop-filter:
         blur(10px);
 
-      font-size:
-        17px;
+      font-size: 17px;
 
     }
 
@@ -2152,27 +2305,23 @@
     .certificate:hover
     .certificate-view {
 
-      opacity:
-        1;
+      opacity: 1;
 
     }
 
 
     .certificate-info {
 
-      padding:
-        22px;
+      padding: 22px;
 
     }
 
 
     .certificate-info h3 {
 
-      font-size:
-        17px;
+      font-size: 17px;
 
-      margin-bottom:
-        8px;
+      margin-bottom: 8px;
 
     }
 
@@ -2182,130 +2331,103 @@
       color:
         var(--muted);
 
-      font-size:
-        12px;
+      font-size: 12px;
 
-      line-height:
-        1.7;
+      line-height: 1.7;
 
     }
 
 
     .certificate-category {
 
-      display:
-        inline-flex;
+      display: inline-flex;
 
       padding:
         6px 9px;
 
-      margin-bottom:
-        12px;
+      margin-bottom: 12px;
 
-      border-radius:
-        100px;
+      border-radius: 100px;
 
       color:
         var(--accent-light);
 
       background:
-        rgba(255, 177, 0, 0.09);
+        rgba(255,177,0,0.09);
 
-      font-size:
-        10px;
+      font-size: 10px;
 
-      font-weight:
-        700;
+      font-weight: 700;
 
-      text-transform:
-        uppercase;
+      text-transform: uppercase;
 
-      letter-spacing:
-        1px;
+      letter-spacing: 1px;
 
     }
 
 
     .certificate-placeholder {
 
-      text-align:
-        center;
+      text-align: center;
 
-      color:
-        #6e707a;
+      color: #6e707a;
 
-      padding:
-        20px;
+      padding: 20px;
 
     }
 
 
     .certificate-placeholder span {
 
-      display:
-        block;
+      display: block;
 
-      font-size:
-        38px;
+      font-size: 38px;
 
-      margin-bottom:
-        10px;
+      margin-bottom: 10px;
 
     }
 
 
     /* ==========================================================
        LIGHTBOX
-    ========================================================== */
+    =========================================================== */
 
     .lightbox {
 
-      position:
-        fixed;
+      position: fixed;
 
-      inset:
-        0;
+      inset: 0;
 
-      z-index:
-        5000;
+      z-index: 5000;
 
-      display:
-        flex;
+      display: flex;
 
-      align-items:
-        center;
+      align-items: center;
 
-      justify-content:
-        center;
+      justify-content: center;
 
-      padding:
-        30px;
+      padding: 30px;
 
       background:
-        rgba(4, 4, 8, 0.90);
+        rgba(4,4,8,0.92);
 
       backdrop-filter:
         blur(18px);
 
-      opacity:
-        0;
+      opacity: 0;
 
-      visibility:
-        hidden;
+      visibility: hidden;
 
-      transition:
-        0.3s;
+      transition: 0.3s;
 
     }
 
 
     .lightbox.active {
 
-      opacity:
-        1;
+      opacity: 1;
 
-      visibility:
-        visible;
+      visibility: visible;
 
     }
 
@@ -2313,23 +2435,20 @@
     .lightbox img {
 
       max-width:
-        min(1000px, 92vw);
+        min(1000px,92vw);
 
-      max-height:
-        85vh;
+      max-height: 85vh;
 
-      border-radius:
-        16px;
+      border-radius: 16px;
 
       box-shadow:
         0 30px 100px
-        rgba(0, 0, 0, 0.65);
+        rgba(0,0,0,0.65);
 
       transform:
         scale(0.92);
 
-      transition:
-        0.3s;
+      transition: 0.3s;
 
     }
 
@@ -2344,116 +2463,85 @@
 
     .lightbox-close {
 
-      position:
-        absolute;
+      position: absolute;
 
-      top:
-        25px;
+      top: 25px;
+      right: 25px;
 
-      right:
-        25px;
+      width: 46px;
+      height: 46px;
 
-      width:
-        46px;
+      display: flex;
 
-      height:
-        46px;
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        center;
+      align-items: center;
+      justify-content: center;
 
       border:
         1px solid
-        rgba(255, 255, 255, 0.15);
+        rgba(255,255,255,0.15);
 
-      border-radius:
-        13px;
+      border-radius: 13px;
 
-      color:
-        white;
+      color: white;
 
       background:
-        rgba(255, 255, 255, 0.08);
+        rgba(255,255,255,0.08);
 
-      cursor:
-        pointer;
+      cursor: pointer;
 
-      font-size:
-        18px;
+      font-size: 18px;
 
     }
 
 
     /* ==========================================================
        TIMELINE
-    ========================================================== */
+    =========================================================== */
 
     .timeline {
 
-      max-width:
-        900px;
+      max-width: 900px;
 
       border-left:
         1px solid
-        rgba(255, 255, 255, 0.12);
+        rgba(255,255,255,0.12);
 
-      margin-left:
-        10px;
+      margin-left: 10px;
 
     }
 
 
     .timeline-item {
 
-      position:
-        relative;
+      position: relative;
 
       padding:
-        0 0 55px
-        40px;
+        0 0 55px 40px;
 
     }
 
 
     .timeline-item:last-child {
-
-      padding-bottom:
-        0;
-
+      padding-bottom: 0;
     }
 
 
     .timeline-item::before {
 
-      content:
-        "";
+      content: "";
 
-      position:
-        absolute;
+      position: absolute;
 
-      width:
-        13px;
+      width: 13px;
+      height: 13px;
 
-      height:
-        13px;
-
-      border-radius:
-        50%;
+      border-radius: 50%;
 
       background:
         var(--accent);
 
-      left:
-        -7px;
-
-      top:
-        5px;
+      left: -7px;
+      top: 5px;
 
       box-shadow:
         0 0 20px
@@ -2467,28 +2555,22 @@
       color:
         var(--accent-light);
 
-      font-size:
-        12px;
+      font-size: 12px;
 
-      font-weight:
-        700;
+      font-weight: 700;
 
-      letter-spacing:
-        1px;
+      letter-spacing: 1px;
 
-      margin-bottom:
-        8px;
+      margin-bottom: 8px;
 
     }
 
 
     .timeline h3 {
 
-      font-size:
-        22px;
+      font-size: 22px;
 
-      margin-bottom:
-        8px;
+      margin-bottom: 8px;
 
     }
 
@@ -2498,59 +2580,51 @@
       color:
         var(--muted);
 
-      line-height:
-        1.8;
+      line-height: 1.8;
 
-      font-size:
-        14px;
+      font-size: 14px;
 
-      max-width:
-        650px;
+      max-width: 650px;
 
     }
 
 
     /* ==========================================================
        CONTACT
-    ========================================================== */
+    =========================================================== */
 
     .contact {
 
-      text-align:
-        center;
+      text-align: center;
 
-      padding-bottom:
-        80px;
+      padding-bottom: 80px;
 
     }
 
 
     .contact-box {
 
-      position:
-        relative;
+      position: relative;
 
-      overflow:
-        hidden;
+      overflow: hidden;
 
-      max-width:
-        900px;
+      max-width: 900px;
 
-      margin:
-        auto;
+      margin: auto;
 
       padding:
         65px 35px;
 
-      border-radius:
-        32px;
+      border-radius: 32px;
 
       background:
+
         radial-gradient(
           circle at center,
-          rgba(255, 177, 0, 0.14),
+          rgba(255,177,0,0.14),
           transparent 60%
         ),
+
         var(--bg-card);
 
       border:
@@ -2562,29 +2636,20 @@
 
     .contact-box::before {
 
-      content:
-        "";
+      content: "";
 
-      position:
-        absolute;
+      position: absolute;
 
-      width:
-        250px;
+      width: 250px;
+      height: 250px;
 
-      height:
-        250px;
+      top: -150px;
+      right: -100px;
 
-      top:
-        -150px;
-
-      right:
-        -100px;
-
-      border-radius:
-        50%;
+      border-radius: 50%;
 
       background:
-        rgba(255, 106, 61, 0.10);
+        rgba(255,106,61,0.10);
 
       filter:
         blur(40px);
@@ -2598,16 +2663,13 @@
         "Oswald";
 
       font-size:
-        clamp(40px, 6vw, 70px);
+        clamp(40px,6vw,70px);
 
-      letter-spacing:
-        -3px;
+      letter-spacing: -3px;
 
-      line-height:
-        1;
+      line-height: 1;
 
-      margin-bottom:
-        20px;
+      margin-bottom: 20px;
 
     }
 
@@ -2621,14 +2683,11 @@
           #ff6a3d
         );
 
-      -webkit-background-clip:
-        text;
+      -webkit-background-clip: text;
 
-      background-clip:
-        text;
+      background-clip: text;
 
-      color:
-        transparent;
+      color: transparent;
 
     }
 
@@ -2641,26 +2700,22 @@
       margin:
         0 auto 30px;
 
-      max-width:
-        560px;
+      max-width: 560px;
 
-      line-height:
-        1.8;
+      line-height: 1.8;
 
-      font-size:
-        14px;
+      font-size: 14px;
 
     }
 
 
     /* ==========================================================
        FOOTER
-    ========================================================== */
+    =========================================================== */
 
     footer {
 
-      text-align:
-        center;
+      text-align: center;
 
       padding:
         35px 20px;
@@ -2668,103 +2723,84 @@
       color:
         #686a73;
 
-      font-size:
-        12px;
+      font-size: 12px;
 
       border-top:
         1px solid
-        rgba(255, 255, 255, 0.05);
+        rgba(255,255,255,0.05);
 
     }
 
 
     footer strong {
+      color: #a3a4aa;
+    }
 
-      color:
-        #a3a4aa;
 
+    footer i {
+      color: #ff5f6d;
     }
 
 
     /* ==========================================================
        BACK TO TOP
-    ========================================================== */
+    =========================================================== */
 
     .back-to-top {
 
-      position:
-        fixed;
+      position: fixed;
 
-      right:
-        25px;
+      right: 25px;
+      bottom: 25px;
 
-      bottom:
-        25px;
+      z-index: 999;
 
-      z-index:
-        999;
+      width: 47px;
+      height: 47px;
 
-      width:
-        47px;
+      display: flex;
 
-      height:
-        47px;
-
-      display:
-        flex;
-
-      align-items:
-        center;
-
-      justify-content:
-        center;
+      align-items: center;
+      justify-content: center;
 
       border:
         1px solid
-        rgba(255, 255, 255, 0.12);
+        rgba(255,255,255,0.12);
 
-      border-radius:
-        14px;
+      border-radius: 14px;
 
-      color:
-        white;
+      color: white;
 
       background:
         linear-gradient(
           135deg,
-          rgba(255, 177, 0, 0.90),
-          rgba(255, 106, 61, 0.90)
+          rgba(255,177,0,0.90),
+          rgba(255,106,61,0.90)
         );
 
-      cursor:
-        pointer;
+      cursor: pointer;
 
-      opacity:
-        0;
+      opacity: 0;
 
-      visibility:
-        hidden;
+      visibility: hidden;
 
       transform:
         translateY(20px);
 
-      transition:
-        0.3s;
+      transition: 0.3s;
 
       box-shadow:
         0 10px 35px
-        rgba(255, 177, 0, 0.25);
+        rgba(255,177,0,0.25);
 
     }
 
 
     .back-to-top.show {
 
-      opacity:
-        1;
+      opacity: 1;
 
-      visibility:
-        visible;
+      visibility: visible;
 
       transform:
         translateY(0);
@@ -2781,13 +2817,12 @@
 
 
     /* ==========================================================
-       REVEAL ANIMATION
-    ========================================================== */
+       REVEAL
+    =========================================================== */
 
     .reveal {
 
-      opacity:
-        0;
+      opacity: 0;
 
       transform:
         translateY(38px);
@@ -2801,8 +2836,7 @@
 
     .reveal.active {
 
-      opacity:
-        1;
+      opacity: 1;
 
       transform:
         translateY(0);
@@ -2811,78 +2845,56 @@
 
 
     .delay-1 {
-
-      transition-delay:
-        0.1s;
-
+      transition-delay: 0.1s;
     }
 
 
     .delay-2 {
-
-      transition-delay:
-        0.2s;
-
+      transition-delay: 0.2s;
     }
 
 
     .delay-3 {
-
-      transition-delay:
-        0.3s;
-
+      transition-delay: 0.3s;
     }
 
 
     /* ==========================================================
-       RESPONSIVE TABLET
-    ========================================================== */
+       TABLET
+    =========================================================== */
 
     @media (max-width: 1000px) {
 
       nav {
-
-        padding:
-          0 5%;
-
+        padding: 0 5%;
       }
 
 
       .hero {
 
-        padding-left:
-          5%;
-
-        padding-right:
-          5%;
+        padding-left: 5%;
+        padding-right: 5%;
 
         grid-template-columns:
           1fr 0.8fr;
 
-        gap:
-          40px;
+        gap: 40px;
 
       }
 
 
       section {
 
-        padding-left:
-          5%;
-
-        padding-right:
-          5%;
+        padding-left: 5%;
+        padding-right: 5%;
 
       }
 
 
       .stats {
 
-        padding-left:
-          5%;
-
-        padding-right:
-          5%;
+        padding-left: 5%;
+        padding-right: 5%;
 
       }
 
@@ -2890,15 +2902,14 @@
       .certificates {
 
         grid-template-columns:
-          repeat(2, 1fr);
+          repeat(2,1fr);
 
       }
 
 
       .hero h1 {
 
-        letter-spacing:
-          -5px;
+        letter-spacing: -5px;
 
       }
 
@@ -2906,84 +2917,65 @@
 
 
     /* ==========================================================
-       RESPONSIVE MOBILE
-    ========================================================== */
+       MOBILE
+    =========================================================== */
 
     @media (max-width: 800px) {
 
       .cursor-glow {
-
-        display:
-          none;
-
+        display: none;
       }
 
 
       nav ul {
 
-        position:
-          fixed;
+        position: fixed;
 
         top:
           var(--navbar-height);
 
-        left:
-          0;
+        left: 0;
 
-        width:
-          100%;
+        width: 100%;
 
         height:
-          calc(
-            100vh - var(--navbar-height)
-          );
+          calc(100vh - var(--navbar-height));
 
-        display:
-          flex;
+        display: flex;
 
-        flex-direction:
-          column;
+        flex-direction: column;
 
-        justify-content:
-          center;
+        justify-content: center;
 
-        align-items:
-          center;
+        align-items: center;
 
-        gap:
-          10px;
+        gap: 10px;
 
-        padding:
-          30px;
+        padding: 30px;
 
         background:
-          rgba(10, 15, 26, 0.97);
+          rgba(8,11,18,0.97);
 
         backdrop-filter:
           blur(30px);
 
-        opacity:
-          0;
+        opacity: 0;
 
-        visibility:
-          hidden;
+        visibility: hidden;
 
         transform:
           translateY(-15px);
 
-        transition:
-          0.3s;
+        transition: 0.3s;
 
       }
 
 
       nav ul.active {
 
-        opacity:
-          1;
+        opacity: 1;
 
-        visibility:
-          visible;
+        visibility: visible;
 
         transform:
           translateY(0);
@@ -2996,8 +2988,7 @@
         font-family:
           "Oswald";
 
-        font-size:
-          26px;
+        font-size: 26px;
 
         padding:
           11px 20px;
@@ -3007,42 +2998,33 @@
 
       .menu-toggle {
 
-        display:
-          flex;
+        display: flex;
 
       }
 
 
       .hero {
 
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
-        min-height:
-          auto;
+        min-height: auto;
 
-        padding-top:
-          130px;
+        padding-top: 130px;
 
-        padding-bottom:
-          70px;
+        padding-bottom: 70px;
 
-        text-align:
-          center;
+        text-align: center;
 
       }
 
 
       .hero-text {
 
-        display:
-          flex;
+        display: flex;
 
-        flex-direction:
-          column;
+        flex-direction: column;
 
-        align-items:
-          center;
+        align-items: center;
 
       }
 
@@ -3050,57 +3032,45 @@
       .hero h1 {
 
         font-size:
-          clamp(
-            60px,
-            17vw,
-            88px
-          );
+          clamp(60px,17vw,88px);
 
-        letter-spacing:
-          -5px;
+        letter-spacing: -5px;
 
       }
 
 
       .hero-description {
 
-        font-size:
-          15px;
+        font-size: 15px;
 
       }
 
 
       .signal-line {
 
-        margin-left:
-          auto;
-
-        margin-right:
-          auto;
+        margin-left: auto;
+        margin-right: auto;
 
       }
 
 
       .buttons {
 
-        justify-content:
-          center;
+        justify-content: center;
 
       }
 
 
       .profile-card {
 
-        transform:
-          rotate(0);
+        transform: rotate(0);
 
       }
 
 
       .profile-wrapper {
 
-        margin-top:
-          15px;
+        margin-top: 15px;
 
       }
 
@@ -3108,7 +3078,7 @@
       .stats-grid {
 
         grid-template-columns:
-          repeat(2, 1fr);
+          repeat(2,1fr);
 
       }
 
@@ -3117,8 +3087,7 @@
       .hobby-grid,
       .skills-grid {
 
-        grid-template-columns:
-          1fr;
+        grid-template-columns: 1fr;
 
       }
 
@@ -3126,178 +3095,7 @@
       .certificates {
 
         grid-template-columns:
-          repeat(2, 1fr);
-
-      }
-
-    }
-
-
-    @media (max-width: 560px) {
-
-      :root {
-
-        --navbar-height:
-          68px;
-
-      }
-
-
-      nav {
-
-        padding:
-          0 5%;
-
-      }
-
-
-      .logo {
-
-        font-size:
-          21px;
-
-      }
-
-
-      section {
-
-        padding-top:
-          85px;
-
-        padding-bottom:
-          85px;
-
-      }
-
-
-      .hero {
-
-        padding-top:
-          115px;
-
-      }
-
-
-      .hero h1 {
-
-        font-size:
-          57px;
-
-        letter-spacing:
-          -4px;
-
-      }
-
-
-      .typing-line {
-
-        font-size:
-          14px;
-
-      }
-
-
-      .profile-image {
-
-        height:
-          400px;
-
-      }
-
-
-      .stats {
-
-        padding-bottom:
-          40px;
-
-      }
-
-
-      .stats-grid {
-
-        gap:
-          10px;
-
-      }
-
-
-      .stat-card {
-
-        padding:
-          20px 12px;
-
-      }
-
-
-      .stat-number {
-
-        font-size:
-          27px;
-
-      }
-
-
-      .section-title {
-
-        letter-spacing:
-          -2px;
-
-      }
-
-
-      .glass {
-
-        padding:
-          24px;
-
-      }
-
-
-      .certificates {
-
-        grid-template-columns:
-          1fr;
-
-      }
-
-
-      .certificate-img {
-
-        height:
-          250px;
-
-      }
-
-
-      .info-item {
-
-        align-items:
-          flex-start;
-
-      }
-
-
-      .back-to-top {
-
-        width:
-          43px;
-
-        height:
-          43px;
-
-        right:
-          17px;
-
-        bottom:
-          17px;
-
-      }
-
-
-      .contact-box {
-
-        padding:
-          50px 22px;
+          repeat(2,1fr);
 
       }
 
@@ -3305,13 +3103,140 @@
 
 
     /* ==========================================================
-       REDUCE MOTION
-    ========================================================== */
+       SMALL MOBILE
+    =========================================================== */
 
-    @media (
-      prefers-reduced-motion:
-      reduce
-    ) {
+    @media (max-width: 560px) {
+
+      :root {
+
+        --navbar-height: 68px;
+
+      }
+
+
+      nav {
+        padding: 0 5%;
+      }
+
+
+      .logo {
+        font-size: 21px;
+      }
+
+
+      section {
+
+        padding-top: 85px;
+        padding-bottom: 85px;
+
+      }
+
+
+      .hero {
+        padding-top: 115px;
+      }
+
+
+      .hero h1 {
+
+        font-size: 57px;
+
+        letter-spacing: -4px;
+
+      }
+
+
+      .typing-line {
+        font-size: 14px;
+      }
+
+
+      .profile-image {
+        height: 400px;
+      }
+
+
+      .stats {
+        padding-bottom: 40px;
+      }
+
+
+      .stats-grid {
+        gap: 10px;
+      }
+
+
+      .stat-card {
+        padding: 20px 12px;
+      }
+
+
+      .stat-number {
+        font-size: 27px;
+      }
+
+
+      .section-title {
+        letter-spacing: -2px;
+      }
+
+
+      .glass {
+        padding: 24px;
+      }
+
+
+      .certificates {
+        grid-template-columns: 1fr;
+      }
+
+
+      .certificate-img {
+        height: 250px;
+      }
+
+
+      .info-item {
+        align-items: flex-start;
+      }
+
+
+      .back-to-top {
+
+        width: 43px;
+        height: 43px;
+
+        right: 17px;
+        bottom: 17px;
+
+      }
+
+
+      .contact-box {
+        padding: 50px 22px;
+      }
+
+
+      /* hujan lebih sedikit di HP */
+
+      .raindrop {
+        opacity: 0.5;
+      }
+
+
+      .leaf {
+        opacity: 0.55;
+      }
+
+    }
+
+
+    /* ==========================================================
+       REDUCE MOTION
+    =========================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
 
       * {
 
@@ -3326,6 +3251,11 @@
 
       }
 
+
+      #weather-effects {
+        display: none;
+      }
+
     }
 
   </style>
@@ -3336,16 +3266,34 @@
 <body>
 
 
-  <!-- =========================
+  <!-- ==========================================================
+       WEATHER EFFECT
+  =========================================================== -->
+
+  <div id="weather-effects">
+
+    <div id="rain-container"></div>
+
+    <div id="leaf-container"></div>
+
+    <div id="lightning-flash"></div>
+
+  </div>
+
+
+  <!-- ==========================================================
        SCROLL PROGRESS
-  ========================== -->
+  =========================================================== -->
 
-  <div class="scroll-progress" id="scrollProgress"></div>
+  <div
+    class="scroll-progress"
+    id="scrollProgress"
+  ></div>
 
 
-  <!-- =========================
+  <!-- ==========================================================
        BACKGROUND
-  ========================== -->
+  =========================================================== -->
 
   <div class="orb one"></div>
 
@@ -3353,12 +3301,15 @@
 
   <div class="orb three"></div>
 
-  <div class="cursor-glow" id="cursorGlow"></div>
+  <div
+    class="cursor-glow"
+    id="cursorGlow"
+  ></div>
 
 
-  <!-- =========================
+  <!-- ==========================================================
        NAVBAR
-  ========================== -->
+  =========================================================== -->
 
   <nav id="navbar">
 
@@ -3373,37 +3324,55 @@
     <ul id="navMenu">
 
       <li>
-        <a href="#home" class="nav-link active">
+        <a
+          href="#home"
+          class="nav-link active"
+        >
           Home
         </a>
       </li>
 
       <li>
-        <a href="#about" class="nav-link">
+        <a
+          href="#about"
+          class="nav-link"
+        >
           About
         </a>
       </li>
 
       <li>
-        <a href="#hobby" class="nav-link">
+        <a
+          href="#hobby"
+          class="nav-link"
+        >
           Hobby
         </a>
       </li>
 
       <li>
-        <a href="#skills" class="nav-link">
+        <a
+          href="#skills"
+          class="nav-link"
+        >
           Skills
         </a>
       </li>
 
       <li>
-        <a href="#certificate" class="nav-link">
+        <a
+          href="#certificate"
+          class="nav-link"
+        >
           Certificate
         </a>
       </li>
 
       <li>
-        <a href="#education" class="nav-link">
+        <a
+          href="#education"
+          class="nav-link"
+        >
           Education
         </a>
       </li>
@@ -3426,18 +3395,14 @@
 
   <!-- ==========================================================
        HERO
-  ========================================================== -->
+  =========================================================== -->
 
   <main
     id="home"
     class="hero"
   >
 
-
-    <!-- HERO TEXT -->
-
     <div class="hero-text">
-
 
       <div class="tag">
 
@@ -3465,7 +3430,10 @@
       ></div>
 
 
-      <div class="signal-line" aria-hidden="true">
+      <div
+        class="signal-line"
+        aria-hidden="true"
+      >
 
         <span class="signal-pulse"></span>
 
@@ -3512,28 +3480,20 @@
     </div>
 
 
-    <!-- =========================
-         PROFILE CARD
-    ========================== -->
+    <!-- PROFILE -->
 
     <div class="profile-wrapper">
 
       <div class="profile-card">
 
-
         <div class="profile-image">
 
-
-          <!-- =========================
-               FOTO PROFILE
-               KODE FOTO INI TETAP ADA
-          ========================== -->
+          <!-- FOTO PROFILE TETAP -->
 
           <img
             src="assets/profil.jpeg"
             alt="Michelle"
           >
-
 
           <div class="profile-overlay"></div>
 
@@ -3551,71 +3511,88 @@
 
         <div class="profile-info">
 
-          <h3>Michelle</h3>
+          <h3>
+            Michelle
+          </h3>
 
           <p>
             Student • Runner • Futsal Enthusiast
           </p>
 
 
-       <div class="socials">
+          <div class="socials">
 
-  <!-- INSTAGRAM -->
-  <a
-    href="https://www.instagram.com/_4ushell?stkn=emVydzJ1eHo3ejE3"
-    class="social-link"
-    aria-label="Instagram"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <i class="fa-brands fa-instagram"></i>
-  </a>
+            <!-- INSTAGRAM -->
 
+            <a
+              href="https://www.instagram.com/_4ushell?stkn=emVydzJ1eHo3ejE3"
+              class="social-link"
+              aria-label="Instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
 
-  <!-- WHATSAPP -->
-  <a
-    href="https://wa.me/6285813123254"
-    class="social-link"
-    aria-label="WhatsApp"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
+              <i class="fa-brands fa-instagram"></i>
+
+            </a>
 
 
-  <!-- TIKTOK -->
-  <a
-    href="https://www.tiktok.com/@xhell_66"
-    class="social-link"
-    aria-label="TikTok"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <i class="fa-brands fa-tiktok"></i>
-  </a>
+            <!-- WHATSAPP -->
+
+            <a
+              href="https://wa.me/6285813123254"
+              class="social-link"
+              aria-label="WhatsApp"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <i class="fa-brands fa-whatsapp"></i>
+
+            </a>
 
 
-  <!-- CERTIFICATE -->
-  <a
-    href="#certificate"
-    class="social-link"
-    aria-label="Certificate"
-  >
-    <i class="fa-solid fa-award"></i>
-  </a>
+            <!-- TIKTOK -->
+
+            <a
+              href="https://www.tiktok.com/@xhell_66"
+              class="social-link"
+              aria-label="TikTok"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <i class="fa-brands fa-tiktok"></i>
+
+            </a>
 
 
-  <!-- EDUCATION -->
-  <a
-    href="#education"
-    class="social-link"
-    aria-label="Education"
-  >
-    <i class="fa-solid fa-graduation-cap"></i>
-  </a>
+            <!-- CERTIFICATE -->
 
-</div>
+            <a
+              href="#certificate"
+              class="social-link"
+              aria-label="Certificate"
+            >
+
+              <i class="fa-solid fa-award"></i>
+
+            </a>
+
+
+            <!-- EDUCATION -->
+
+            <a
+              href="#education"
+              class="social-link"
+              aria-label="Education"
+            >
+
+              <i class="fa-solid fa-graduation-cap"></i>
+
+            </a>
+
+          </div>
 
         </div>
 
@@ -3627,13 +3604,12 @@
 
 
   <!-- ==========================================================
-       QUICK STATS
-  ========================================================== -->
+       STATS
+  =========================================================== -->
 
   <div class="stats reveal">
 
     <div class="stats-grid">
-
 
       <div class="stat-card">
 
@@ -3693,10 +3669,9 @@
 
   <!-- ==========================================================
        ABOUT
-  ========================================================== -->
+  =========================================================== -->
 
   <section id="about">
-
 
     <div class="section-heading reveal">
 
@@ -3704,11 +3679,9 @@
         01 — About Me
       </div>
 
-
       <h2 class="section-title">
         Get to know me.
       </h2>
-
 
       <p class="section-description">
 
@@ -3723,7 +3696,6 @@
 
     <div class="about-grid">
 
-
       <div class="glass about-intro reveal">
 
         <div>
@@ -3731,7 +3703,6 @@
           <h3>
             Tentang Saya 👋
           </h3>
-
 
           <p>
 
@@ -3768,7 +3739,6 @@
 
 
         <div class="info-list">
-
 
           <div class="info-item">
 
@@ -3858,10 +3828,9 @@
 
   <!-- ==========================================================
        HOBBY
-  ========================================================== -->
+  =========================================================== -->
 
   <section id="hobby">
-
 
     <div class="section-heading reveal">
 
@@ -3869,11 +3838,9 @@
         02 — My Passion
       </div>
 
-
       <h2 class="section-title">
         Things I love.
       </h2>
-
 
       <p class="section-description">
 
@@ -3887,9 +3854,6 @@
 
 
     <div class="hobby-grid">
-
-
-      <!-- RUNNING -->
 
       <div class="glass hobby reveal">
 
@@ -3921,8 +3885,6 @@
 
       </div>
 
-
-      <!-- FUTSAL -->
 
       <div class="glass hobby reveal delay-1">
 
@@ -3961,10 +3923,9 @@
 
   <!-- ==========================================================
        SKILLS
-  ========================================================== -->
+  =========================================================== -->
 
   <section id="skills">
-
 
     <div class="section-heading reveal">
 
@@ -3972,11 +3933,9 @@
         03 — Skills
       </div>
 
-
       <h2 class="section-title">
         What I'm learning.
       </h2>
-
 
       <p class="section-description">
 
@@ -3990,8 +3949,6 @@
 
     <div class="skills-grid">
 
-
-      <!-- SKILL PROGRESS -->
 
       <div class="glass skill-card reveal">
 
@@ -4110,8 +4067,6 @@
       </div>
 
 
-      <!-- TOOLS -->
-
       <div class="glass reveal delay-1">
 
         <h3>
@@ -4119,7 +4074,7 @@
         </h3>
 
 
-        <p style="margin-bottom: 22px;">
+        <p style="margin-bottom:22px;">
 
           Beberapa teknologi dan tools yang
           sedang atau pernah saya pelajari.
@@ -4134,48 +4089,40 @@
             Networking
           </span>
 
-
           <span class="tool-tag">
             <i class="fa-brands fa-linux"></i>
             Linux
           </span>
-
 
           <span class="tool-tag">
             <i class="fa-solid fa-server"></i>
             Server
           </span>
 
-
           <span class="tool-tag">
             <i class="fa-solid fa-globe"></i>
             Web
           </span>
-
 
           <span class="tool-tag">
             <i class="fa-brands fa-html5"></i>
             HTML
           </span>
 
-
           <span class="tool-tag">
             <i class="fa-brands fa-css3-alt"></i>
             CSS
           </span>
-
 
           <span class="tool-tag">
             <i class="fa-solid fa-code"></i>
             Coding
           </span>
 
-
           <span class="tool-tag">
             <i class="fa-solid fa-wifi"></i>
             Network
           </span>
-
 
           <span class="tool-tag">
             <i class="fa-solid fa-terminal"></i>
@@ -4193,10 +4140,9 @@
 
   <!-- ==========================================================
        CERTIFICATES
-  ========================================================== -->
+  =========================================================== -->
 
   <section id="certificate">
-
 
     <div class="section-heading reveal">
 
@@ -4204,11 +4150,9 @@
         04 — Achievements
       </div>
 
-
       <h2 class="section-title">
         My certificates.
       </h2>
-
 
       <p class="section-description">
 
@@ -4226,10 +4170,7 @@
     <div class="certificates">
 
 
-      <!-- ======================================================
-           CERTIFICATE 1
-           PATH FOTO TETAP
-      ======================================================= -->
+      <!-- CERTIFICATE 1 -->
 
       <div
         class="glass certificate reveal certificate-clickable"
@@ -4238,12 +4179,10 @@
 
         <div class="certificate-img">
 
-
           <img
             src="assets/certificates/sertifikat-1.jpg"
             alt="Sertifikat Fundamental Fiber Optic"
           >
-
 
           <div class="certificate-view">
 
@@ -4260,11 +4199,9 @@
             Fiber Optic
           </span>
 
-
           <h3>
             Certificate Fundamental Fiber Optic
           </h3>
-
 
           <p>
 
@@ -4280,10 +4217,7 @@
       </div>
 
 
-      <!-- ======================================================
-           CERTIFICATE 2
-           PATH FOTO TETAP
-      ======================================================= -->
+      <!-- CERTIFICATE 2 -->
 
       <div
         class="glass certificate reveal delay-1 certificate-clickable"
@@ -4292,12 +4226,10 @@
 
         <div class="certificate-img">
 
-
           <img
             src="assets/certificates/sertifikat-2.jpeg"
             alt="Sertifikat Fundamental Network"
           >
-
 
           <div class="certificate-view">
 
@@ -4314,11 +4246,9 @@
             Networking
           </span>
 
-
           <h3>
             Certificate Fundamental Network
           </h3>
-
 
           <p>
 
@@ -4334,10 +4264,7 @@
       </div>
 
 
-      <!-- ======================================================
-           CERTIFICATE 3
-           PATH FOTO TETAP
-      ======================================================= -->
+      <!-- CERTIFICATE 3 -->
 
       <div
         class="glass certificate reveal delay-2 certificate-clickable"
@@ -4346,12 +4273,10 @@
 
         <div class="certificate-img">
 
-
           <img
             src="assets/certificates/sertifikat-3.jpeg"
             alt="Sertifikat Fundamental Linux"
           >
-
 
           <div class="certificate-view">
 
@@ -4368,11 +4293,9 @@
             Linux
           </span>
 
-
           <h3>
             Certificate Fundamental Linux
           </h3>
-
 
           <p>
 
@@ -4388,9 +4311,7 @@
       </div>
 
 
-      <!-- ======================================================
-           CERTIFICATE 4
-      ======================================================= -->
+      <!-- CERTIFICATE 4 -->
 
       <div class="glass certificate reveal">
 
@@ -4398,9 +4319,7 @@
 
           <div class="certificate-placeholder">
 
-            <span>
-              🏆
-            </span>
+            <span>🏆</span>
 
             Sertifikat #04
 
@@ -4415,11 +4334,9 @@
             Upcoming
           </span>
 
-
           <h3>
             Future Certificate
           </h3>
-
 
           <p>
 
@@ -4433,9 +4350,7 @@
       </div>
 
 
-      <!-- ======================================================
-           CERTIFICATE 5
-      ======================================================= -->
+      <!-- CERTIFICATE 5 -->
 
       <div class="glass certificate reveal delay-1">
 
@@ -4443,9 +4358,7 @@
 
           <div class="certificate-placeholder">
 
-            <span>
-              🏆
-            </span>
+            <span>🏆</span>
 
             Sertifikat #05
 
@@ -4460,11 +4373,9 @@
             Upcoming
           </span>
 
-
           <h3>
             Future Certificate
           </h3>
-
 
           <p>
 
@@ -4478,9 +4389,7 @@
       </div>
 
 
-      <!-- ======================================================
-           CERTIFICATE 6
-      ======================================================= -->
+      <!-- CERTIFICATE 6 -->
 
       <div class="glass certificate reveal delay-2">
 
@@ -4488,9 +4397,7 @@
 
           <div class="certificate-placeholder">
 
-            <span>
-              🏆
-            </span>
+            <span>🏆</span>
 
             Sertifikat #06
 
@@ -4505,11 +4412,9 @@
             Upcoming
           </span>
 
-
           <h3>
             Future Certificate
           </h3>
-
 
           <p>
 
@@ -4529,10 +4434,9 @@
 
   <!-- ==========================================================
        EDUCATION
-  ========================================================== -->
+  =========================================================== -->
 
   <section id="education">
-
 
     <div class="section-heading reveal">
 
@@ -4540,11 +4444,9 @@
         05 — Education
       </div>
 
-
       <h2 class="section-title">
         My journey.
       </h2>
-
 
       <p class="section-description">
 
@@ -4565,11 +4467,9 @@
           2025 — PRESENT
         </div>
 
-
         <h3>
           SMK Taruna Bhakti
         </h3>
-
 
         <p>
 
@@ -4589,11 +4489,9 @@
           LEARNING JOURNEY
         </div>
 
-
         <h3>
           Networking & Technology
         </h3>
-
 
         <p>
 
@@ -4612,11 +4510,9 @@
           PERSONAL GROWTH
         </div>
 
-
         <h3>
           Building Experience
         </h3>
-
 
         <p>
 
@@ -4635,14 +4531,12 @@
 
 
   <!-- ==========================================================
-       CONTACT / END
-  ========================================================== -->
+       CONTACT
+  =========================================================== -->
 
   <section class="contact">
 
-
     <div class="contact-box reveal">
-
 
       <div class="section-label">
         06 — Thank You
@@ -4690,19 +4584,24 @@
 
   <!-- ==========================================================
        FOOTER
-  ========================================================== -->
+  =========================================================== -->
 
   <footer>
 
     © 2026
-    <strong>Michelle.</strong>
+
+    <strong>
+      Michelle.
+    </strong>
 
     All Rights Reserved.
 
     <br><br>
 
     Built with
+
     <i class="fa-solid fa-heart"></i>
+
     and curiosity.
 
   </footer>
@@ -4710,7 +4609,7 @@
 
   <!-- ==========================================================
        LIGHTBOX
-  ========================================================== -->
+  =========================================================== -->
 
   <div
     class="lightbox"
@@ -4739,7 +4638,7 @@
 
   <!-- ==========================================================
        BACK TO TOP
-  ========================================================== -->
+  =========================================================== -->
 
   <button
     class="back-to-top"
@@ -4754,49 +4653,39 @@
 
   <!-- ==========================================================
        JAVASCRIPT
-  ========================================================== -->
+  =========================================================== -->
 
   <script>
 
     /* ==========================================================
        ELEMENT
-    ========================================================== */
+    =========================================================== */
 
     const navbar =
       document.getElementById("navbar");
 
-
     const navMenu =
       document.getElementById("navMenu");
-
 
     const menuToggle =
       document.getElementById("menuToggle");
 
-
     const scrollProgress =
       document.getElementById("scrollProgress");
-
 
     const backToTop =
       document.getElementById("backToTop");
 
-
     const cursorGlow =
       document.getElementById("cursorGlow");
-
 
     const navLinks =
       document.querySelectorAll(".nav-link");
 
 
-    const sections =
-      document.querySelectorAll("section, main");
-
-
     /* ==========================================================
        MOBILE MENU
-    ========================================================== */
+    =========================================================== */
 
     menuToggle.addEventListener(
       "click",
@@ -4806,10 +4695,8 @@
 
         document.body.classList.toggle("menu-open");
 
-
         const icon =
           menuToggle.querySelector("i");
-
 
         if (
           navMenu.classList.contains("active")
@@ -4818,9 +4705,7 @@
           icon.className =
             "fa-solid fa-xmark";
 
-        }
-
-        else {
+        } else {
 
           icon.className =
             "fa-solid fa-bars";
@@ -4831,8 +4716,6 @@
     );
 
 
-    /* TUTUP MENU SAAT LINK DIKLIK */
-
     navLinks.forEach(
       link => {
 
@@ -4842,7 +4725,9 @@
 
             navMenu.classList.remove("active");
 
-            document.body.classList.remove("menu-open");
+            document.body.classList.remove(
+              "menu-open"
+            );
 
             menuToggle.querySelector("i").className =
               "fa-solid fa-bars";
@@ -4856,7 +4741,7 @@
 
     /* ==========================================================
        SCROLL EFFECT
-    ========================================================== */
+    =========================================================== */
 
     window.addEventListener(
       "scroll",
@@ -4874,9 +4759,7 @@
 
           navbar.classList.add("scrolled");
 
-        }
-
-        else {
+        } else {
 
           navbar.classList.remove("scrolled");
 
@@ -4891,9 +4774,7 @@
 
           backToTop.classList.add("show");
 
-        }
-
-        else {
+        } else {
 
           backToTop.classList.remove("show");
 
@@ -4909,10 +4790,12 @@
 
         const progress =
           documentHeight > 0
+
             ? (
                 scrollTop /
                 documentHeight
               ) * 100
+
             : 0;
 
 
@@ -4925,7 +4808,7 @@
 
     /* ==========================================================
        BACK TO TOP
-    ========================================================== */
+    =========================================================== */
 
     backToTop.addEventListener(
       "click",
@@ -4945,7 +4828,7 @@
 
     /* ==========================================================
        REVEAL ANIMATION
-    ========================================================== */
+    =========================================================== */
 
     const reveals =
       document.querySelectorAll(".reveal");
@@ -4975,9 +4858,7 @@
         },
 
         {
-
           threshold: 0.12
-
         }
 
       );
@@ -4994,7 +4875,13 @@
 
     /* ==========================================================
        ACTIVE NAV LINK
-    ========================================================== */
+    =========================================================== */
+
+    const sections =
+      document.querySelectorAll(
+        "section, main"
+      );
+
 
     const sectionObserver =
       new IntersectionObserver(
@@ -5047,10 +4934,8 @@
         },
 
         {
-
           rootMargin:
             "-40% 0px -50% 0px"
-
         }
 
       );
@@ -5073,7 +4958,7 @@
 
     /* ==========================================================
        TYPING EFFECT
-    ========================================================== */
+    =========================================================== */
 
     const typingElement =
       document.getElementById("typingText");
@@ -5107,9 +4992,7 @@
         typingWords[wordIndex];
 
 
-      if (
-        !deleting
-      ) {
+      if (!deleting) {
 
         typingElement.textContent =
           currentWord.substring(
@@ -5137,9 +5020,7 @@
 
         }
 
-      }
-
-      else {
+      } else {
 
         typingElement.textContent =
           currentWord.substring(
@@ -5185,8 +5066,8 @@
 
 
     /* ==========================================================
-       SKILL BAR ANIMATION
-    ========================================================== */
+       SKILL BAR
+    =========================================================== */
 
     const skillSection =
       document.getElementById("skills");
@@ -5240,20 +5121,20 @@
         },
 
         {
-
           threshold: 0.25
-
         }
 
       );
 
 
-    skillObserver.observe(skillSection);
+    skillObserver.observe(
+      skillSection
+    );
 
 
     /* ==========================================================
        CERTIFICATE LIGHTBOX
-    ========================================================== */
+    =========================================================== */
 
     const certificateCards =
       document.querySelectorAll(
@@ -5262,7 +5143,9 @@
 
 
     const lightbox =
-      document.getElementById("lightbox");
+      document.getElementById(
+        "lightbox"
+      );
 
 
     const lightboxImage =
@@ -5313,7 +5196,6 @@
         "active"
       );
 
-
       document.body.style.overflow =
         "";
 
@@ -5360,7 +5242,7 @@
 
     /* ==========================================================
        CURSOR GLOW
-    ========================================================== */
+    =========================================================== */
 
     document.addEventListener(
       "mousemove",
@@ -5368,7 +5250,6 @@
 
         cursorGlow.style.left =
           event.clientX + "px";
-
 
         cursorGlow.style.top =
           event.clientY + "px";
@@ -5378,8 +5259,8 @@
 
 
     /* ==========================================================
-       CARD TILT EFFECT
-    ========================================================== */
+       PROFILE CARD TILT
+    =========================================================== */
 
     const profileCard =
       document.querySelector(
@@ -5396,8 +5277,7 @@
         event => {
 
           const rect =
-            profileCard
-              .getBoundingClientRect();
+            profileCard.getBoundingClientRect();
 
 
           const x =
@@ -5454,6 +5334,322 @@
       );
 
     }
+
+
+    /* ==========================================================
+       WEATHER SYSTEM
+    =========================================================== */
+
+    const rainContainer =
+      document.getElementById(
+        "rain-container"
+      );
+
+
+    const leafContainer =
+      document.getElementById(
+        "leaf-container"
+      );
+
+
+    const lightningFlash =
+      document.getElementById(
+        "lightning-flash"
+      );
+
+
+    /* ==========================================================
+       CREATE RAIN
+    =========================================================== */
+
+    const rainAmount =
+      window.innerWidth < 600
+        ? 85
+        : 170;
+
+
+    for (
+      let i = 0;
+      i < rainAmount;
+      i++
+    ) {
+
+      const rain =
+        document.createElement(
+          "span"
+        );
+
+
+      rain.classList.add(
+        "raindrop"
+      );
+
+
+      rain.style.left =
+        Math.random() * 110 + "%";
+
+
+      rain.style.height =
+        15 +
+        Math.random() * 28 +
+        "px";
+
+
+      rain.style.animationDuration =
+        0.55 +
+        Math.random() * 0.8 +
+        "s";
+
+
+      rain.style.animationDelay =
+        Math.random() * 3 +
+        "s";
+
+
+      rain.style.opacity =
+        0.25 +
+        Math.random() * 0.55;
+
+
+      rainContainer.appendChild(
+        rain
+      );
+
+    }
+
+
+    /* ==========================================================
+       CREATE LEAVES
+    =========================================================== */
+
+    const leafAmount =
+      window.innerWidth < 600
+        ? 7
+        : 15;
+
+
+    for (
+      let i = 0;
+      i < leafAmount;
+      i++
+    ) {
+
+      const leaf =
+        document.createElement(
+          "span"
+        );
+
+
+      leaf.classList.add(
+        "leaf"
+      );
+
+
+      leaf.style.left =
+        Math.random() * 100 +
+        "%";
+
+
+      leaf.style.animationDuration =
+        7 +
+        Math.random() * 9 +
+        "s";
+
+
+      leaf.style.animationDelay =
+        Math.random() * 10 +
+        "s";
+
+
+      leaf.style.transform =
+        `scale(${0.6 + Math.random() * 0.7})`;
+
+
+      leafContainer.appendChild(
+        leaf
+      );
+
+    }
+
+
+    /* ==========================================================
+       LIGHTNING
+    =========================================================== */
+
+    function lightning() {
+
+      lightningFlash.classList.remove(
+        "active"
+      );
+
+
+      void lightningFlash.offsetWidth;
+
+
+      lightningFlash.classList.add(
+        "active"
+      );
+
+
+      setTimeout(
+        () => {
+
+          lightningFlash.classList.remove(
+            "active"
+          );
+
+        },
+        700
+      );
+
+    }
+
+
+    /* ==========================================================
+       RANDOM LIGHTNING
+    =========================================================== */
+
+    function scheduleLightning() {
+
+      const delay =
+        8000 +
+        Math.random() * 18000;
+
+
+      setTimeout(
+        () => {
+
+          lightning();
+
+          scheduleLightning();
+
+        },
+        delay
+      );
+
+    }
+
+
+    scheduleLightning();
+
+
+    /* ==========================================================
+       EXTRA LIGHTNING BURST
+       Kadang petir menyambar 2x
+    =========================================================== */
+
+    function lightningBurst() {
+
+      lightning();
+
+      setTimeout(
+        () => {
+
+          lightning();
+
+        },
+        180
+      );
+
+    }
+
+
+    /* ==========================================================
+       OPTIONAL STORM INTENSITY
+    =========================================================== */
+
+    let stormMode = false;
+
+
+    function activateStorm() {
+
+      if (stormMode) {
+        return;
+      }
+
+
+      stormMode = true;
+
+
+      document.body.style.background =
+        "radial-gradient(circle at 50% 10%, rgba(80,150,255,0.08), transparent 30%), var(--bg)";
+
+
+      setTimeout(
+        () => {
+
+          document.body.style.background = "";
+
+          stormMode = false;
+
+        },
+        1800
+      );
+
+    }
+
+
+    /* ==========================================================
+       CONNECT LIGHTNING + STORM
+    =========================================================== */
+
+    const originalLightning =
+      lightning;
+
+
+    function stormLightning() {
+
+      activateStorm();
+
+      originalLightning();
+
+    }
+
+
+    /* Replace random lightning with storm version */
+
+    function scheduleStormLightning() {
+
+      const delay =
+        10000 +
+        Math.random() * 20000;
+
+
+      setTimeout(
+        () => {
+
+          stormLightning();
+
+          scheduleStormLightning();
+
+        },
+        delay
+      );
+
+    }
+
+
+    /* ==========================================================
+       START STORM
+    =========================================================== */
+
+    scheduleStormLightning();
+
+
+    /* ==========================================================
+       PAGE LOAD
+    =========================================================== */
+
+    window.addEventListener(
+      "load",
+      () => {
+
+        document.body.classList.add(
+          "page-loaded"
+        );
+
+      }
+    );
 
   </script>
 
