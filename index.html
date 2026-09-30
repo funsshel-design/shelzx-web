@@ -2188,28 +2188,20 @@
        CERTIFICATES
     =========================================================== */
 
-    .certificates {
+   .certificates {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+}
 
-      display: grid;
-
-      grid-template-columns:
-        repeat(3,1fr);
-
-      gap: 24px;
-
-    }
-
-
-    .certificate {
-
-      overflow: hidden;
-
-      padding: 0;
-
-      cursor: pointer;
-
-    }
-
+.certificate {
+    overflow: hidden;
+    padding: 0;
+    cursor: pointer;
+    height: fit-content;
+    align-self: start;
+}
 
     .certificate-img {
 
@@ -4368,7 +4360,7 @@
 
           <img
             src="assets/certificates/cisco.jpeg"
-            alt="Sertifikat Pengenalan Pnetlab"
+            alt="Sertifikat Pengenalan cisco"
           >
 
           <div class="certificate-view">
@@ -4479,7 +4471,7 @@
           </span>
 
           <h3>
-            Certificate Pengenalan PnetLab
+            Certificate Pengenalan Cyber Security
           </h3>
 
           <p>
